@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_project/components/buttons.dart';
+
+import 'main_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.grey, brightness: Brightness.dark),
+      theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.dark),
       home: const MainWidget(),
     );
   }
@@ -34,10 +35,9 @@ class _MainWidgetState extends State<MainWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Hello World'),
-            ButtonElevated(onPressed: () {}, child: const Text('Hello World')),
-            ButtonOutlined(onPressed: () {}, child: const Text('Hello World')),
-            ButtonPlain(onPressed: () {}, child: const Text('Hello World')),
+            ConstrainedBox(
+                constraints: const BoxConstraints(maxHeight: 500),
+                child: const MainCard()),
           ],
         ),
       ),
